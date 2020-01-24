@@ -24,3 +24,21 @@ export const getInterview = (state, interview) => {
     return interviewObj;
   }
 };
+
+
+// Returns the interviewrs for a given day (ex: Monday)
+export const getInterviewersForDay = (state, day) => {
+  const interviewersId = state.days
+    .filter(e => e.name === day)
+    .map(e => e.interviewers)
+    .reduce((acc, val) => acc.concat(val), []);
+
+  const interviewers = [];
+
+  interviewersId.forEach(e => {
+    interviewers.push(state.interviewers[e]);
+  });
+
+  return interviewers;
+};
+
