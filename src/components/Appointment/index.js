@@ -24,10 +24,13 @@ export default function Appointment(props) {
     
 
   function save(name, interviewer) {
+    console.log('This is name', name)
+    console.log('This is interviewer', interviewer)
     const interview = {
       student: name,
       interviewer
     };
+    console.log(interview)
     return interview;
   }
 
