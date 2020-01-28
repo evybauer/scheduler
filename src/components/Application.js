@@ -12,7 +12,8 @@ const {
   state,
   setDay,
   bookInterview,
-  cancelInterview
+  cancelInterview,
+  spotsRemaining
 } = useApplicationData();
 
 const interviewers = getInterviewersForDay(state, state.day);
@@ -46,6 +47,8 @@ const appointments = getAppointmentsForDay(state, state.day).map(
         days={state.days} 
         day={state.day} 
         setDay={setDay}
+        appointments={state.appointments}
+        spotsRemaining={spotsRemaining} 
         />
         </nav>
         <img

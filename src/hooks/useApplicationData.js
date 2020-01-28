@@ -46,8 +46,30 @@ const [state, dispatch] = useReducer(reducer, {
           dispatch({ type: SET_INTERVIEW, id, interview: null });
         });
       }
-      return { state, setDay, bookInterview, cancelInterview };
+
+      const spotsRemaining = (appointments, days, day) => {
+        const targetDay = days.find(e => e.name === day);
+        const appointmentList = [...targetDay.appointments];
+        const availableSpots = appointmentList.length;
+            
+        const filledSpots = Object.values({ ...appointments }).reduce(
+          (total, appointment) => {
+            if (appointmentList.includes(appointment.id)) {
+              if (appointment.interview) {
+                return total + 1;
+              }
+            }
+            return total;
+          },
+          0
+        );
+      
+        return availableSpots - filledSpots;
+      };
+    
+      return { state, setDay, bookInterview, cancelInterview, spotsRemaining };
     }
+
 
 const SET_DAY = "SET_DAY";
 const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";

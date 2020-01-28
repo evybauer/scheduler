@@ -19,8 +19,9 @@ export default function DayListItem(props) {
       <h2>{name}</h2>
      
       <h3>
-        {(spots ? (spots === 1 ? '1 spot ' : spots + ' spots ') : 'no spots ') +
+      {(spots ? (spots === 1 ? '1 spot ' : spots + ' spots ') : 'no spots ') +
           'remaining'}
+        
       </h3>
    
     </li>
