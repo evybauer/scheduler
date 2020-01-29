@@ -19,7 +19,7 @@ const [state, dispatch] = useReducer(reducer, {
       
     Promise.all([ days, appointments, interviewers
       ]).then(([days, appointments, interviewers]) => {
-        console.log('test', days, appointments, interviewers)
+        //console.log('test', days, appointments, interviewers)
         dispatch({
           type: SET_APPLICATION_DATA,
           days: days.data,
@@ -30,11 +30,11 @@ const [state, dispatch] = useReducer(reducer, {
     }, []);
 
     const bookInterview = function(id, interview) {
-      console.log('This is interview bookInt', interview)
+      //console.log('This is interview bookInt', interview)
       return axios
         .put(`/api/appointments/${id}`, {interview})
         .then(() => {
-          console.log(id, interview)
+          // console.log(id, interview)
           dispatch({ type: SET_INTERVIEW, id, interview});
       });
     };
