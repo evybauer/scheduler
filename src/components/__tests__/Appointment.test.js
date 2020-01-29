@@ -10,9 +10,7 @@ describe("Appointment", () => {
   it("renders without crashing", () => {
     render(<Appointment />);
   });
-});
 
-describe("Appointment", () => {
 it("doesn't call the function", () => {
   const fn = jest.fn();
   expect(fn).toHaveBeenCalledTimes(0);
