@@ -1,8 +1,14 @@
 import React from "react";
 import "./styles.scss";
 
+
 export default function Show(props) {
-  const { interviewer, onDelete, onEdit, student } = props;
+  const { 
+    interviewer, 
+    onDelete, 
+    onEdit, 
+    student 
+  } = props;
   
   return (
     <main className="appointment__card appointment__card--show">

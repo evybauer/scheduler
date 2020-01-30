@@ -26,7 +26,7 @@ export const getInterview = (state, interview) => {
 };
 
 
-// Returns the interviewrs for a given day (ex: Monday)
+// Returns the interviewrs for a given day
 export const getInterviewersForDay = (state, day) => {
   const interviewersId = state.days
     .filter(e => e.name === day)

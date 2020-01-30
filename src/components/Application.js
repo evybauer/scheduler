@@ -2,9 +2,13 @@ import React from "react";
 import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
-import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "../helpers/selectors"
 import useApplicationData from "hooks/useApplicationData"
-import { promises } from "dns";
+import { 
+  getAppointmentsForDay, 
+  getInterview, 
+  getInterviewersForDay 
+} from "../helpers/selectors"
+
 
 export default function Application () {
 
@@ -22,13 +26,13 @@ const appointments = getAppointmentsForDay(state, state.day).map(
   appointment => {
     return (
       <Appointment
-      key={appointment.id}
-      {...appointment}
-      time={appointment.time}
-      interview={getInterview(state, appointment.interview)}
-      interviewers={interviewers}
-      bookInterview={bookInterview}
-      cancelInterview={cancelInterview}
+        key={appointment.id}
+        {...appointment}
+        time={appointment.time}
+        interview={getInterview(state, appointment.interview)}
+        interviewers={interviewers}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
@@ -44,11 +48,11 @@ const appointments = getAppointmentsForDay(state, state.day).map(
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
         <DayList 
-        days={state.days} 
-        day={state.day} 
-        setDay={setDay}
-        appointments={state.appointments}
-        spotsRemaining={spotsRemaining} 
+          days={state.days} 
+          day={state.day} 
+          setDay={setDay}
+          appointments={state.appointments}
+          spotsRemaining={spotsRemaining} 
         />
         </nav>
         <img

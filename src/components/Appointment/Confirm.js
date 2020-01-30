@@ -2,8 +2,13 @@ import React from "react";
 import Button from '../Button';
 import "./styles.scss";
 
+
 export default function Confirm(props) {
-  const { message, onCancel, onConfirm } = props;
+  const { 
+    message, 
+    onCancel, 
+    onConfirm 
+  } = props;
 
   return (
   <main className="appointment__card appointment__card--confirm">

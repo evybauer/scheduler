@@ -1,7 +1,5 @@
 import React from "react";
-
 import "components/InterviewerListItem.scss";
-
 import classnames from "classnames/bind";
 
 

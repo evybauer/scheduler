@@ -1,7 +1,5 @@
 import React from "react";
-
 import "components/Button.scss";
-
 import classnames from "classnames/bind";
 
 export default function Button(props) {
